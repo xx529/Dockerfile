@@ -1,7 +1,10 @@
 FROM ubuntu:18.04
 
 # 设置 apt 并更新
-RUN apt update -y && apt-get update -y && apt -y upgrade
+RUN apt update -y \
+    apt-get update -y \
+    apt -y upgrade \
+    apt-get install wget
 
 # 设置时区
 RUN apt-get install -y tzdata && \
