@@ -38,11 +38,12 @@ RUN wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-late
 # 更改成 bash 
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
-# 安装 python 环境
+# 安装 python3.8 环境
 RUN conda create -n py38 python=3.8 -y && \
     source activate py38 && \
-    conda install numpy pandas jupyter scikit-learn
-    
+    pip install --no-cache-dir -r requirements.txt
+
+# python3.10环境
 RUN conda create -n py310 python=3.10 -y && \
     source activate py310
    
