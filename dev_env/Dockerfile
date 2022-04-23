@@ -44,7 +44,7 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 # python3.8 + jupyterlab + labextension
 RUN conda create -n py38 python=3.8 -y && \
     source activate py38 && \
-    conda install --no-cache-dir --yes --file requirements.txt && \
+    conda install --yes --file requirements.txt && \
     conda install jupyterlab && \
     apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates && \
     curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
