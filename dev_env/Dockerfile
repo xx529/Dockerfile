@@ -2,6 +2,9 @@ FROM ubuntu:18.04
 
 MAINTAINER Hang
 
+# 复制
+COPY . ./dockerfile/
+
 # 设置 apt 并更新
 RUN apt update -y && \
     apt-get update -y && \
@@ -41,7 +44,7 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 # 安装 python3.8 环境
 RUN conda create -n py38 python=3.8 -y && \
     source activate py38 && \
-    pip install --no-cache-dir -r requirements.txt
+    pip install --no-cache-dir -r ./dockerfile/requirements.txt
 
 # python3.10环境
 RUN conda create -n py310 python=3.10 -y && \
