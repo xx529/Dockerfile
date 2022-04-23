@@ -1,5 +1,7 @@
 FROM ubuntu:18.04
 
+MAINTAINER Hang
+
 # 设置 apt 并更新
 RUN apt update -y && \
     apt-get update -y && \
@@ -22,14 +24,20 @@ RUN apt install -y vim && \
     
 # 安装 miniconda
 RUN wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
-    sh Miniconda3-lastest-Linux-x86_64.sh && \
+    h Miniconda3-latest-Linux-x86_64.sh -b -p /opt/conda && \
     rm -rf Miniconda3-lastest-Linux-x86_64.sh && \
+    ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
+    echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
+    source /root/.bashrc && \
     conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/ && \
     conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/ && \
     conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/ && \
-    conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/ && \
-    conda config --set show_channel_urls yes
+    conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
 
+# 安装 python 环境
+RUN conda create -n py38 python=3.8 -y && \
+    conda activate py38 && \
+    conda install numpy pandas jupyter scikit-learn
+   
 
-
-CMD /bin/bash
+CMD ["/bin/bash"]
