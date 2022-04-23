@@ -1,6 +1,8 @@
-FROM ubuntu:18.04
+FROM centos:7
 
 MAINTAINER Hang
+
+RUN /bin/bash
 
 # 设置 apt 并更新
 RUN apt update -y && \
