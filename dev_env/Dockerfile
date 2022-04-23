@@ -39,6 +39,9 @@ RUN wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-late
 RUN conda create -n py38 python=3.8 -y && \
     /bin/bash -c "source activate py38" && \
     conda install numpy pandas jupyter scikit-learn
+    
+RUN conda create -n py310 python=3.10 -y && \
+    /bin/bash -c "source activate py310" 
    
 
 CMD ["/bin/bash"]
