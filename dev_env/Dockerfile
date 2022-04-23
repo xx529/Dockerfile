@@ -14,8 +14,8 @@ ENV LC_CTYPE zh_CN.UTF-8
 ENV LANG zh_CN.UTF-8
 
 # 安装相关
-RUN apt install -y vim \
-    apt install -y git
+RUN apt install -y vim 
+RUN apt install -y git
     
 # 安装 miniconda
 RUN wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh \
