@@ -35,13 +35,16 @@ RUN wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-late
     conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/ && \
     conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
 
+# 更改成 bash 
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+
 # 安装 python 环境
 RUN conda create -n py38 python=3.8 -y && \
-    /bin/bash -c "source activate py38" && \
+    source activate py38 && \
     conda install numpy pandas jupyter scikit-learn
     
 RUN conda create -n py310 python=3.10 -y && \
-    /bin/bash -c "source activate py310" 
+    source activate py310
    
 
 CMD ["/bin/bash"]
