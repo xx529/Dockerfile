@@ -2,9 +2,6 @@ FROM ubuntu:18.04
 
 MAINTAINER Hang
 
-# 切换 bash
-RUN rm /bin/sh && ln -s /bin/bash /bin/sh
-
 # 设置 apt 并更新
 RUN apt update -y && \
     apt-get update -y && \
@@ -31,7 +28,7 @@ RUN wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-late
     rm -rf Miniconda3-lastest-Linux-x86_64.sh && \
     ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
     echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
-    source /root/.bashrc && \
+    /bin/bash -c "source /root/.bashrc" && \
     conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/ && \
     conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/ && \
     conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/ && \
