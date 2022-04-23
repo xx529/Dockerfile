@@ -2,7 +2,8 @@ FROM ubuntu:18.04
 
 MAINTAINER Hang
 
-RUN /bin/bash
+# 切换 bash
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 # 设置 apt 并更新
 RUN apt update -y && \
