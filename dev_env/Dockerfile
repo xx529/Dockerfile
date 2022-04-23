@@ -23,6 +23,7 @@ RUN apt install -y vim && \
     apt install -y git
     
 # 安装 miniconda
+ENV PATH /opt/conda/bin:$PATH
 RUN wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
     sh Miniconda3-latest-Linux-x86_64.sh -b -p /opt/conda && \
     rm -rf Miniconda3-lastest-Linux-x86_64.sh && \
@@ -36,7 +37,7 @@ RUN wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-late
 
 # 安装 python 环境
 RUN conda create -n py38 python=3.8 -y && \
-    conda activate py38 && \
+    /bin/bash -c "source activate py38" && \
     conda install numpy pandas jupyter scikit-learn
    
 
