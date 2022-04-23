@@ -40,7 +40,7 @@ plotly
 
 
 # PyTorch(cpu)
-# torch
+torch
 torchvision
 torchaudio
 pytorch-lightning
