@@ -26,7 +26,7 @@ RUN apt install -y vim && \
 ENV PATH /opt/conda/bin:$PATH
 RUN wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
     sh Miniconda3-latest-Linux-x86_64.sh -b -p /opt/conda && \
-    rm -rf Miniconda3-lastest-Linux-x86_64.sh && \
+    rm -rf Miniconda3-latest-Linux-x86_64.sh && \
     ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
     echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
     /bin/bash -c "source /root/.bashrc" && \
