@@ -14,7 +14,7 @@ ENV LC_CTYPE zh_CN.UTF-8
 ENV LANG zh_CN.UTF-8
 
 # 安装相关
-RUN apt install vim 
-RUN apt install git
+RUN apt install -y vim 
+RUN apt install -y git
 
 CMD /bin/bash
