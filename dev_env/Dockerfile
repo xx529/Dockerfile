@@ -44,17 +44,17 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 # python3.8 + jupyterlab + labextension
 RUN conda create -n py38 python=3.8 -y && \
     source activate py38 && \
-    pip install --no-cache-dir -r ./dockerfile/requirements.txt && \
-    pip install jupyterlab && \
+    conda install --no-cache-dir --yes --file requirements.txt && \
+    conda install jupyterlab && \
     apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates && \
     curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
     apt -y install nodejs && \
     jupyter serverextension enable --py jupyterlab --user && \
-    pip install lckr-jupyterlab-variableinspector && \
-    pip install --pre jupyter-lsp && \
+    conda install lckr-jupyterlab-variableinspector && \
+    conda install --pre jupyter-lsp && \
     jupyter labextension install @krassowski/jupyterlab-lsp && \
-    pip install python-language-server[python] && \
-    pip install theme-darcula
+    conda install python-language-server[python] && \
+    conda install theme-darcula
 
 # python3.10
 RUN conda create -n py310 python=3.10 -y && \
