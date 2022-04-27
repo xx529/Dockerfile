@@ -2,10 +2,7 @@ FROM ubuntu:18.04
 
 MAINTAINER Hang
 
-# 复制
-COPY . ./dockerfile/
-
-# 设置 apt 并更新
+#  apt 更新、系统工具
 RUN apt update -y && \
     apt-get update -y && \
     apt -y upgrade && \
@@ -21,9 +18,10 @@ RUN apt install -y locales && locale-gen zh_CN.UTF-8
 ENV LC_CTYPE zh_CN.UTF-8
 ENV LANG zh_CN.UTF-8
 
-# 安装相关
+# 常用工具
 RUN apt install -y vim && \
-    apt install -y git
+    apt install -y git && \
+    apt-get install -y build-essential
     
 # 安装 miniconda
 ENV PATH /opt/conda/bin:$PATH
@@ -32,33 +30,42 @@ RUN wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-late
     rm -rf Miniconda3-latest-Linux-x86_64.sh && \
     ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
     echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
-    /bin/bash -c "source /root/.bashrc" && \
-    conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/ && \
-    conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/ && \
-    conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/ && \
-    conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+    /bin/bash -c "source /root/.bashrc"
+
+# 复制
+COPY . ./dockerfile/
 
 # 更改成 bash 
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
-# python3.8 + jupyterlab + labextension
-RUN conda create -n py38 python=3.8 -y && \
-    source activate py38 && \
-    conda install --yes --file requirements.txt && \
-    conda install jupyterlab && \
-    apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates && \
-    curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
-    apt -y install nodejs && \
-    jupyter serverextension enable --py jupyterlab --user && \
-    conda install lckr-jupyterlab-variableinspector && \
-    conda install --pre jupyter-lsp && \
-    jupyter labextension install @krassowski/jupyterlab-lsp && \
-    conda install python-language-server[python] && \
-    conda install theme-darcula
+# 升级conda
+RUN conda update -n base -c defaults conda
 
 # python3.10
 RUN conda create -n py310 python=3.10 -y && \
     source activate py310
-   
+
+# python3.8 + streamlit
+RUN conda create -n streamlit python=3.8 -y && \
+    source activate streamlit && \
+    pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
+    pip install --use-deprecated=legacy-resolver --no-cache-dir -r ./dockerfile/streamlit.txt
+
+# python3.8 + jupyterlab + labextension
+RUN conda create -n py38 python=3.8 -y && \
+    source activate py38 && \
+    pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
+    pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cpu && \
+    pip install --use-deprecated=legacy-resolver --no-cache-dir -r ./dockerfile/base.txt && \
+    pip install jupyterlab && \
+    apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates && \
+    curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
+    apt -y install nodejs && \
+    jupyter serverextension enable --py jupyterlab --user && \
+    pip install lckr-jupyterlab-variableinspector && \
+    pip install --pre jupyter-lsp && \
+    jupyter labextension install @krassowski/jupyterlab-lsp && \
+    pip install python-language-server[python] && \
+    pip install theme-darcula
 
 CMD ["/bin/bash"]
