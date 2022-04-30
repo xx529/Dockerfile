@@ -6,6 +6,7 @@ MAINTAINER Hang
 RUN apt update -y && \
     apt-get update -y && \
     apt -y upgrade && \
+    apt-get upgrade && \
     apt-get install -y wget
 
 # 设置时区
@@ -21,8 +22,9 @@ ENV LANG zh_CN.UTF-8
 # 常用工具
 RUN apt install -y vim && \
     apt install -y git && \
-    apt-get install -y build-essential
-    
+    apt-get install -y build-essential && \
+    apt-get install libsasl2-dev
+
 # 安装 miniconda
 ENV PATH /opt/conda/bin:$PATH
 RUN wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
@@ -32,40 +34,49 @@ RUN wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-late
     echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
     /bin/bash -c "source /root/.bashrc"
 
-# 复制
-COPY . ./dockerfile/
 
 # 更改成 bash 
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
-# 升级conda
+# 升级 conda
 RUN conda update -n base -c defaults conda
+
+# 复制 Dockerfile
+COPY . ./dockerfile/
+
+# 安装 jupyterlab + extension
+RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
+    pip install ipykernel && \
+    pip install jupyterlab && \
+    pip install lckr-jupyterlab-variableinspector && \
+    pip install theme-darcula && \
+    python -m ipykernel install --user --name=base --display-name "base"
+
+# python3.6 
+RUN conda create -n py36-dev python=3.6 -y && \
+    source activate py36-dev && \
+    pip install --no-cache-dir torch torchvision torchaudio && \
+    pip install --use-deprecated=legacy-resolver --no-cache-dir -r ./dockerfile/dev.txt && \
+    pip install ipykernel && \
+    python -m ipykernel install --user --name=py36-dev --display-name "py36-dev"
 
 # python3.10
 RUN conda create -n py310 python=3.10 -y && \
-    source activate py310
+    source activate py310 && \
+    pip install ipykernel && \
+    python -m ipykernel install --user --name=py310 --display-name "py310"
 
 # python3.8 + streamlit
-RUN conda create -n streamlit python=3.8 -y && \
-    source activate streamlit && \
+RUN conda create -n py38-streamlit python=3.8 -y && \
+    source activate py38-streamlit && \
     pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
-    pip install --use-deprecated=legacy-resolver --no-cache-dir -r ./dockerfile/streamlit.txt
+    pip install --use-deprecated=legacy-resolver --no-cache-dir -r ./dockerfile/streamlit.txt && \
+    pip install ipykernel && \
+    python -m ipykernel install --user --name=py38-streamlit --display-name "py38-streamlit"
 
-# python3.8 + jupyterlab + labextension
-RUN conda create -n py38 python=3.8 -y && \
-    source activate py38 && \
-    pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
-    pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cpu && \
-    pip install --use-deprecated=legacy-resolver --no-cache-dir -r ./dockerfile/base.txt && \
-    pip install jupyterlab && \
-    apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates && \
-    curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
-    apt -y install nodejs && \
-    jupyter serverextension enable --py jupyterlab --user && \
-    pip install lckr-jupyterlab-variableinspector && \
-    pip install --pre jupyter-lsp && \
-    jupyter labextension install @krassowski/jupyterlab-lsp && \
-    pip install python-language-server[python] && \
-    pip install theme-darcula
 
-CMD ["/bin/bash"]
+# jupyterlab 启动 token
+ENV NOTEBOOK_APP_TOKEN=hang
+
+# 启动 jupyterlab
+CMD jupyter lab --ip 0.0.0.0 --no-browser --port=8888 --allow-root --NotebookApp.token=${NOTEBOOK_APP_TOKEN}
