@@ -1,0 +1,67 @@
+# Base
+pyyaml
+tqdm
+cython
+xlrd
+openpyxl
+einops
+
+
+# ML
+numpy
+pandas
+modin[all]
+scikit-learn
+lightgbm
+imblearn
+ortools
+efficient-apriori
+tsfresh
+
+# AutoML
+autogluon
+tpot
+
+
+# Tuning
+hyperopt
+optuna
+shap
+
+
+# Plot
+matplotlib
+seaborn
+pyecharts
+plotly
+
+
+networkx
+node2vec
+
+
+
+gensim
+jieba
+
+
+# Web
+flask
+jsonschema
+webargs
+scrapy
+streamlit
+fastapi
+
+
+# Database
+py2neo
+vertica_python
+pyspark
+pymysql
+psycopg2-binary
+pyhive[hive]
+pyhive[presto]
+elasticsearch
+redis
+happybase
