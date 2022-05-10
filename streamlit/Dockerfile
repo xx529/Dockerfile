@@ -20,6 +20,6 @@ RUN pip3 install --upgrade setuptools && \
     python3 -m pip install --upgrade pip
     
 # 安装 python 包
-RUN pip3 install --no-cache-dir -r /dockerfile/requirements.txt
+RUN pip3 install --no-cache-dir -i https://pypi.tuna.tsinghua.edu.cn/simple -r /dockerfile/requirements.txt
 
 CMD /bin/bash
