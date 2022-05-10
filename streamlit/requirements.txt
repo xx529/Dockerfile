@@ -1,0 +1,12 @@
+numpy
+pandas
+xlrd
+streamlit
+plotly
+pyyaml
+requests
+psycopg2-binary
+flask
+jieba
+py2neo
+requests
