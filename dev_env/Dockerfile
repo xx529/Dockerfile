@@ -50,6 +50,7 @@ RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && 
 RUN conda create -n py38-dev python=3.8 -y && \
     source activate py38-dev && \
     pip install --no-cache-dir torch torchvision torchaudio && \
+    pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
     pip install --use-deprecated=legacy-resolver --no-cache-dir -r ./dockerfile/py38-dev.txt && \
     pip install ipykernel && \
     python -m ipykernel install --user --name=py38-dev --display-name "py38-dev"
