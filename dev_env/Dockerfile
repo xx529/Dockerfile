@@ -7,7 +7,8 @@ RUN apt update -y && \
     apt-get update -y && \
     apt -y upgrade && \
     apt-get upgrade && \
-    apt-get install -y wget
+    apt-get install -y wget && \
+    apt-get install unzip
 
 # 设置时区
 RUN apt-get install -y tzdata && \
