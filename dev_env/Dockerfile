@@ -24,7 +24,7 @@ RUN apt install -y vim && \
     apt install -y git && \
     apt-get install -y build-essential && \
     apt-get install libsasl2-dev && \
-    apt install python3-pip && \
+    apt install -y python3-pip && \
     pip3 install -y -U pip && \
     apt-get install unzip
 
