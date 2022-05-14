@@ -84,7 +84,7 @@ gym
 
 
 # REC
-# scikit-surprise
+surprise
 deepctr
 # faiss
 
@@ -109,3 +109,4 @@ pyhive[presto]
 elasticsearch
 redis
 happybase
+pymongo
