@@ -24,7 +24,7 @@ RUN apt install -y vim && \
     apt install -y git && \
     apt-get install -y build-essential && \
     apt-get install libsasl2-dev && \
-    apt-get install python-pip && \
+    apt-get install -y python-pip && \
     apt-get install unzip
 
 # 安装 miniconda 并升级
