@@ -32,9 +32,13 @@ RUN wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-late
     rm -rf Miniconda3-latest-Linux-x86_64.sh && \
     ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
     echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
-    /bin/bash -c "source /root/.bashrc" && \
-    rm /bin/sh && ln -s /bin/bash /bin/sh && \
-    conda update -n base -c defaults conda
+    /bin/bash -c "source /root/.bashrc"
+    
+# 更改成 bash 
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+
+# 升级 conda
+RUN conda update -n base -c defaults conda
 
 # 复制 Dockerfile
 COPY . ./dockerfile/
