@@ -7,8 +7,7 @@ RUN apt update -y && \
     apt-get update -y && \
     apt -y upgrade && \
     apt-get upgrade && \
-    apt-get install -y wget && \
-    apt-get install unzip
+    apt-get install -y wget
 
 # 设置时区
 RUN apt-get install -y tzdata && \
@@ -24,7 +23,9 @@ ENV LANG zh_CN.UTF-8
 RUN apt install -y vim && \
     apt install -y git && \
     apt-get install -y build-essential && \
-    apt-get install libsasl2-dev
+    apt-get install libsasl2-dev && \
+    apt-get install python-pip && \
+    apt-get install unzip
 
 # 安装 miniconda 并升级
 ENV PATH /opt/conda/bin:$PATH
