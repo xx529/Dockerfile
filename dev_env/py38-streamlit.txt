@@ -5,5 +5,14 @@ streamlit
 plotly
 pyyaml
 requests
-psycopg2-binary
+py2neo
 vertica_python
+pyspark
+pymysql
+psycopg2-binary
+pyhive[hive]
+pyhive[presto]
+elasticsearch
+redis
+happybase
+pymongo
