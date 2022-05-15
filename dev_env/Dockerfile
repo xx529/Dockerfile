@@ -80,5 +80,10 @@ RUN conda create -n py310-base python=3.10 -y && \
     pip3 install ipykernel && \
     python -m ipykernel install --user --name=py310-base --display-name "py310-base"
 
+# 安装 c++ 内核
+RUN conda create -n c++ -y && \
+    source activate c++ && \
+    conda install xeus-cling -c conda-forge
+
 # 启动 jupyterlab
 CMD jupyter lab --ip 0.0.0.0 --no-browser --port=8888 --allow-root --NotebookApp.token=hang
