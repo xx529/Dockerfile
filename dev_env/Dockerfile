@@ -51,7 +51,9 @@ RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && 
     pip install ipykernel && \
     pip install jupyterlab && \
     pip install lckr-jupyterlab-variableinspector && \
-    pip install theme-darcula
+    pip install theme-darcula && \
+    pip install ipykernel && \
+    python -m ipykernel install --user --name=base --display-name "base"
 
 # development
 RUN conda create -n py38-dev python=3.8 -y && \
