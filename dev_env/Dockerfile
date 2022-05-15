@@ -52,6 +52,7 @@ RUN pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple &&
     pip3 install jupyterlab && \
     pip3 install lckr-jupyterlab-variableinspector && \
     pip3 install theme-darcula && \
+    pip3 install xeus-python && \
     python -m ipykernel install --user --name=base --display-name "base"
 
 # development
