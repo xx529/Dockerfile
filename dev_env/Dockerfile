@@ -48,7 +48,7 @@ COPY . ./dockerfile/
 
 # 安装 jupyterlab + extension
 RUN pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
-    pip3 install jupyterlab && \
+    pip3 install jupyterlab==3.4.2 && \
     pip3 install lckr-jupyterlab-variableinspector && \
     pip3 install theme-darcula && \
     pip3 install xeus-python && \
