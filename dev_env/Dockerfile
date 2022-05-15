@@ -54,6 +54,7 @@ RUN pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple &&
     pip3 install xeus-python && \
     pip3 install jupyterlab-spreadsheet-editor && \
     pip3 install jupyterlab-kite && \
+    pip3 install jupyter-dash && \
     conda install ipykernel && \
     python -m ipykernel install --user --name=base --display-name "base"
     
