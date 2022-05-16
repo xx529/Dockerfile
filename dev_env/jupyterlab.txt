@@ -5,3 +5,4 @@ xeus-python
 jupyterlab-spreadsheet-editor
 jupyter-dash
 jupyterlab-sql
+Jupyterlab-git
