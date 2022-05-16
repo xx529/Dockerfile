@@ -47,9 +47,8 @@ RUN conda update -n base -c defaults conda
 COPY . ./dockerfile/
 
 # 安装 jupyterlab + extension
-RUN conda install -c conda-forge jupyterlab && \
-    pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
-    pip3 install --use-deprecated=legacy-resolver --no-cache-dir -r ./dockerfile/jupyterlab.txt && \
+RUN pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
+    pip3 install --use-deprecated=legacy-resolver --no-cache-dir -r ./dockerfile/jupyterlab.txt
     
 # # 安装 c++ 内核
 # RUN conda create -n c++ -y && \
