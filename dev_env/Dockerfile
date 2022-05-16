@@ -49,7 +49,7 @@ COPY . ./dockerfile/
 # 安装 jupyterlab + extension
 RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
     pip install --no-cache-dir -r ./dockerfile/jupyterlab.txt && \
-    pip install ipykernel && \
+    conda install ipykernel && \
     python -m ipykernel install --user --name=base --display-name "base"
     
 # # 安装 c++ 内核
