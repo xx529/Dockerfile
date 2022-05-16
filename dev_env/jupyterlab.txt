@@ -4,4 +4,4 @@ theme-darcula
 xeus-python
 jupyterlab-spreadsheet-editor
 jupyter-dash
-Jupyterlab-git
+jupyterlab-gitlab
