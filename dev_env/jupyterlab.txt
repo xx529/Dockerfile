@@ -1,4 +1,4 @@
-jupyterlab==4.0.0a17
+jupyterlab
 lckr-jupyterlab-variableinspector
 theme-darcula
 xeus-python
