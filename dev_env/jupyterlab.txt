@@ -4,5 +4,5 @@ theme-darcula
 xeus-python
 jupyterlab-spreadsheet-editor
 jupyter-dash
-jupyterlab-gitlab
+jupyterlab-git
 jupyterlab-system-monitor
