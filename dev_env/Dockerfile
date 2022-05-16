@@ -60,26 +60,26 @@ RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && 
 # # streamlit
 # RUN conda create -n py38-streamlit python=3.8 -y && \
 #     source activate py38-streamlit && \
-#     pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
-#     pip3 install --use-deprecated=legacy-resolver --no-cache-dir -r ./dockerfile/py38-streamlit.txt && \
-#     pip3 install ipykernel && \
+#     pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
+#     pip install --use-deprecated=legacy-resolver --no-cache-dir -r ./dockerfile/py38-streamlit.txt && \
+#     pip install ipykernel && \
 #     python -m ipykernel install --user --name=py38-streamlit --display-name "py38-streamlit"
     
 # # python3.10
 # RUN conda create -n py310-base python=3.10 -y && \
 #     source activate py310-base && \
-#     pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
-#     pip3 install --use-deprecated=legacy-resolver --no-cache-dir -r ./dockerfile/py310-base.txt && \
-#     pip3 install ipykernel && \
+#     pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
+#     pip install --use-deprecated=legacy-resolver --no-cache-dir -r ./dockerfile/py310-base.txt && \
+#     pip install ipykernel && \
 #     python -m ipykernel install --user --name=py310-base --display-name "py310-base"
 
 # # development
 # RUN conda create -n py38-dev python=3.8 -y && \
 #     source activate py38-dev && \
-#     pip3 install --no-cache-dir torch torchvision torchaudio && \
-#     pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
-#     pip3 install --use-deprecated=legacy-resolver --no-cache-dir -r ./dockerfile/py38-dev.txt && \
-#     pip3 install ipykernel && \
+#     pip install --no-cache-dir torch torchvision torchaudio && \
+#     pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
+#     pip install --use-deprecated=legacy-resolver --no-cache-dir -r ./dockerfile/py38-dev.txt && \
+#     pip install ipykernel && \
 #     python -m ipykernel install --user --name=py38-dev --display-name "py38-dev"
 
 # 启动 jupyterlab
