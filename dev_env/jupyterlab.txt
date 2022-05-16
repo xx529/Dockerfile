@@ -1,1 +1,7 @@
+jupyterlab==3.4.2
+lckr-jupyterlab-variableinspector
+theme-darcula
+xeus-python
+jupyterlab-spreadsheet-editor
+jupyter-dash
 jupyterlab-sql
