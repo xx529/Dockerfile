@@ -56,6 +56,9 @@ RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && 
 # RUN conda create -n c++ -y && \
 #     source activate c++ && \
 #     conda install xeus-cling -c conda-forge
+#     jupyter-kernelspec install --user xcpp11 && \
+#     jupyter-kernelspec install --user xcpp14 && \
+#     jupyter-kernelspec install --user xcpp17
     
 # # streamlit
 # RUN conda create -n py38-streamlit python=3.8 -y && \
