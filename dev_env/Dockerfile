@@ -47,8 +47,7 @@ RUN conda update -n base -c defaults conda
 COPY . ./dockerfile/
 
 # 安装 jupyterlab + extension
-RUN conda install nodejs && \
-    pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
+RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
     pip install --no-cache-dir -r ./dockerfile/jupyterlab.txt && \
     conda install ipykernel && \
     python -m ipykernel install --user --name=base --display-name "base"
