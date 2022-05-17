@@ -76,6 +76,16 @@ RUN conda create -n py38-dev python=3.8 -y && \
     pip install --use-deprecated=legacy-resolver --no-cache-dir -r ./dockerfile/py38-dev.txt && \
     pip install ipykernel && \
     python -m ipykernel install --user --name=py38-dev --display-name "py38-dev"
+    
+# c++
+RUN conda install -c conda-forge xeus-cling && \
+    conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/ && \
+    conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/ && \
+    conda -y install -c conda-forge xeus-cling && \
+    jupyter-kernelspec install --user /opt/conda/share/jupyter/kernels/xcpp11 && \
+    jupyter-kernelspec install --user /opt/conda/share/jupyter/kernels/xcpp14 && \
+    jupyter-kernelspec install --user /opt/conda/share/jupyter/kernels/xcpp17
+    
 
 # 启动 jupyterlab
 CMD jupyter lab --ip 0.0.0.0 --no-browser --port=8888 --allow-root --NotebookApp.token=hang
