@@ -5,3 +5,4 @@ xeus-python
 jupyter-dash
 jupyterlab-git
 jupyterlab-system-monitor
+jupyterlab-drawio
