@@ -2,7 +2,6 @@ jupyterlab
 lckr-jupyterlab-variableinspector
 theme-darcula
 xeus-python
-jupyterlab-spreadsheet-editor
 jupyter-dash
 jupyterlab-git
 jupyterlab-system-monitor
