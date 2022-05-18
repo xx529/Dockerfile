@@ -81,7 +81,7 @@ RUN conda create -n py38-dev python=3.8 -y && \
 RUN conda install -c conda-forge xeus-cling && \
     conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/ && \
     conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/ && \
-    conda -y install -c conda-forge xeus-cling && \
+    conda install -c conda-forge -y xeus-cling && \
     jupyter-kernelspec install --user /opt/conda/share/jupyter/kernels/xcpp11 && \
     jupyter-kernelspec install --user /opt/conda/share/jupyter/kernels/xcpp14 && \
     jupyter-kernelspec install --user /opt/conda/share/jupyter/kernels/xcpp17
