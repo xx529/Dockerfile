@@ -6,3 +6,6 @@ jupyter-dash
 jupyterlab-git
 jupyterlab-system-monitor
 jupyterlab-drawio
+jupyterlab-unfold
+jupyterlab-filebrowser-terminal
+jupyter-archive
