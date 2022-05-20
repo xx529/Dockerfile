@@ -50,7 +50,7 @@ COPY . ./dockerfile/
 RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
     pip install --no-cache-dir -r ./dockerfile/jupyterlab.txt && \
     pip install 'python-lsp-server[all]' && \
-    pip install 'jupyterlab>=3.0.0,<4.0.0a0' jupyterlab-lsp && \
+    pip install 'jupyterlab>=3.0.0,<4.0.0a0' jupyterlab-lsp
     
 # streamlit
 RUN conda create -n py38-streamlit python=3.8 -y && \
