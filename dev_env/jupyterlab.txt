@@ -11,3 +11,4 @@ jupyterlab-filebrowser-terminal
 jupyter-archive
 jupyterlab-tabular-data-editor
 jupyterlab-stickyland
+jupyterlab-nvdashboard
