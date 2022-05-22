@@ -81,6 +81,7 @@ jieba
 
 # RL
 gym
+pygame
 
 
 # REC
