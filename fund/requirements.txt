@@ -4,7 +4,7 @@ pyyaml
 numpy
 pandas
 networkx
-jsonschema
 py2neo
 vertica_python
 ortools
+webargs
