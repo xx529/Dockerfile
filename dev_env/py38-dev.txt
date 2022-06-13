@@ -5,6 +5,7 @@ cython
 xlrd
 openpyxl
 einops
+line_profiler
 
 # other
 imageio
