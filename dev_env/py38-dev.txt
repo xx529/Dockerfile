@@ -6,6 +6,7 @@ xlrd
 openpyxl
 einops
 line_profiler
+memory_profiler
 
 # other
 imageio
