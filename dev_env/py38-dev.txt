@@ -8,9 +8,15 @@ einops
 line_profiler
 memory_profiler
 
+
 # other
 imageio
 faker
+docx
+sklearn_crfsuite
+reportlab
+pdfkit
+xhtml2pdf
 
 
 # ML
