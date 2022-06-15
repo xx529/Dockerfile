@@ -17,6 +17,7 @@ sklearn_crfsuite
 reportlab
 pdfkit
 xhtml2pdf
+kaleido
 
 
 # ML
