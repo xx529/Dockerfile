@@ -12,7 +12,7 @@ memory_profiler
 # other
 imageio
 faker
-docx
+python-docx-1
 sklearn_crfsuite
 reportlab
 pdfkit
