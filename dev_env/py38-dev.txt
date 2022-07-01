@@ -87,6 +87,7 @@ deepsnap
 transformers
 gensim
 jieba
+lac
 
 
 # RL
