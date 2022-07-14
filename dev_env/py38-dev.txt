@@ -3,6 +3,7 @@ pyyaml
 tqdm
 cython
 xlrd
+xlwt
 openpyxl
 einops
 line_profiler
