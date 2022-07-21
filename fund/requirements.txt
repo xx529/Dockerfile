@@ -8,3 +8,4 @@ py2neo
 vertica_python
 ortools
 webargs
+sqlalchemy-vertica
