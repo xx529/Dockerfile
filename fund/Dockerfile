@@ -5,6 +5,11 @@ COPY ./* ./dockerfile/
 # apt 更新
 RUN apt update -y && apt-get update -y && apt -y upgrade
 
+# 安装ssh
+RUN apt-get install -y openssh-server openssh-client && \
+    echo root:123456 | chpasswd && \
+    echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
+
 # 设置时区
 RUN apt-get install -y tzdata && \
     ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
