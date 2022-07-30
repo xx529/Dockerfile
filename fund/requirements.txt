@@ -9,3 +9,4 @@ vertica_python
 ortools
 webargs
 sqlalchemy-vertica
+scipy
