@@ -27,6 +27,11 @@ RUN apt install -y vim && \
     apt -y install python3-pip && \
     pip3 install -U pip && \
     apt-get install unzip
+    
+# 安装ssh
+RUN apt-get install -y openssh-server openssh-client && \
+    echo root:123456 | chpasswd && \
+    echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 
 # 安装 miniconda 并升级
 ENV PATH /opt/conda/bin:$PATH
