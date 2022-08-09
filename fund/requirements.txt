@@ -10,3 +10,4 @@ ortools
 webargs
 sqlalchemy-vertica
 scipy
+modin
