@@ -91,9 +91,6 @@ RUN conda create -n py38-dev python=3.8 -y && \
 #     jupyter-kernelspec install --user /opt/conda/share/jupyter/kernels/xcpp11 && \
 #     jupyter-kernelspec install --user /opt/conda/share/jupyter/kernels/xcpp14 && \
 #     jupyter-kernelspec install --user /opt/conda/share/jupyter/kernels/xcpp17
-    
-# 复制相关资源
-
 
 # 启动 jupyterlab
 CMD jupyter lab --ip 0.0.0.0 --no-browser --port=8888 --allow-root --NotebookApp.token=hang
