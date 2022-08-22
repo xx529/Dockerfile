@@ -25,7 +25,7 @@ RUN apt install -y vim && \
     apt-get install -y build-essential && \
     apt-get install libsasl2-dev && \
     apt -y install python3-pip && \
-    pip3 install -U pip && \
+    pip3 install -U pip -i https://pypi.doubanio.com/simple && \
     apt-get install unzip
     
 # 安装ssh
