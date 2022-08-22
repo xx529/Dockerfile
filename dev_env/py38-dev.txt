@@ -82,6 +82,7 @@ flax
 networkx
 node2vec
 deepsnap
+python-louvain
 
 
 # NLP
