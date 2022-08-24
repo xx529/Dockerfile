@@ -26,7 +26,13 @@ RUN apt install -y vim && \
     apt-get install libsasl2-dev && \
     apt -y install python3-pip && \
     pip3 install -U pip -i https://pypi.doubanio.com/simple && \
-    apt-get install unzip
+    apt-get install unzip && \
+    apt-get install libfreetype6-dev && \
+    apt-get install pkg-config && \
+    apt-get install libpng12-dev && \
+    apt-get install pkg-config
+
+
     
 # 安装ssh
 RUN apt-get install -y openssh-server openssh-client && \
