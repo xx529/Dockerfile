@@ -84,6 +84,8 @@ networkx
 node2vec
 deepsnap
 python-louvain
+python-igraph
+leidenalg
 
 
 # NLP
