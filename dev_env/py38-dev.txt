@@ -86,7 +86,7 @@ deepsnap
 python-louvain
 python-igraph
 leidenalg
-
+pycairo
 
 # NLP
 transformers
