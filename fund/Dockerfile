@@ -3,7 +3,7 @@ FROM python:3.8.13-slim-bullseye
 COPY ./* ./dockerfile/
 
 # apt 更新
-RUN apt update -y && apt-get update -y && apt -y upgrade
+RUN apt update -y && apt-get update -y && apt -y upgrade && apt install -y vim
 
 # 安装ssh
 RUN apt-get install -y openssh-server openssh-client && \
