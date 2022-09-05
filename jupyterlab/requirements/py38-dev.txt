@@ -1,0 +1,128 @@
+# Base
+pyyaml
+tqdm
+cython
+xlrd
+xlwt
+openpyxl
+einops
+line_profiler
+memory_profiler
+
+
+# other
+imageio
+faker
+python-docx-1
+aspose-words
+sklearn_crfsuite
+reportlab
+pdfkit
+xhtml2pdf
+kaleido
+
+
+# ML
+numpy
+pandas
+modin[all]
+scikit-learn
+lightgbm
+imblearn
+ortools
+efficient-apriori
+tsfresh
+
+# AutoML
+autogluon
+tpot
+
+
+# Tuning
+hyperopt
+optuna
+shap
+
+
+# Plot
+matplotlib
+seaborn
+pyecharts
+plotly
+
+
+# PyTorch(cpu)
+# torch
+# torchvision
+# torchaudio
+
+pytorch-lightning
+
+
+# PyTorch-geometric
+# torch-scatter
+# torch-sparse
+# torch-cluster
+# torch-spline-conv
+torch-geometric
+
+visdom
+
+
+# DL
+onnx
+
+
+# Jax(cpu)
+jax
+jaxlib
+flax
+
+
+# Graph
+networkx
+node2vec
+deepsnap
+python-louvain
+python-igraph
+leidenalg
+
+# NLP
+transformers
+gensim
+jieba
+lac
+
+
+# RL
+gym
+pygame
+
+
+# REC
+surprise
+deepctr
+# faiss
+
+
+# Web
+flask
+jsonschema
+webargs
+scrapy
+fastapi
+
+
+# Database
+py2neo
+vertica_python
+pyspark
+pymysql
+psycopg2-binary
+pyhive[hive]
+pyhive[presto]
+elasticsearch
+redis
+happybase
+pymongo
+sqlalchemy-vertica
