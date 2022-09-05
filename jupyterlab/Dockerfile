@@ -84,13 +84,13 @@ RUN conda create -n py38-dev python=3.8 -y && \
     pip install --no-cache-dir torch torchvision torchaudio && \
     wget https://data.pyg.org/whl/torch-1.12.0%2Bcpu/torch_cluster-1.6.0-cp38-cp38-linux_x86_64.whl && \
     pip install torch_cluster-1.6.0-cp38-cp38-linux_x86_64.whl && \
-    rm -rf torch_cluster-1.5.9-cp38-cp38-linux_x86_64.whl && \
+    rm -rf torch_cluster-1.6.0-cp38-cp38-linux_x86_64.whl && \
     wget https://data.pyg.org/whl/torch-1.12.0%2Bcpu/torch_scatter-2.0.9-cp38-cp38-linux_x86_64.whl && \
     pip install torch_scatter-2.0.9-cp38-cp38-linux_x86_64.whl && \
     rm -rf torch_scatter-2.0.9-cp38-cp38-linux_x86_64.whl && \
     wget https://data.pyg.org/whl/torch-1.12.0%2Bcpu/torch_sparse-0.6.14-cp38-cp38-linux_x86_64.whl && \
     pip install torch_sparse-0.6.14-cp38-cp38-linux_x86_64.whl && \
-    rm -rf torch_sparse-0.6.12-cp38-cp38-linux_x86_64.whl && \
+    rm -rf torch_sparse-0.6.14-cp38-cp38-linux_x86_64.whl && \
     wget https://data.pyg.org/whl/torch-1.12.0%2Bcpu/torch_spline_conv-1.2.1-cp38-cp38-linux_x86_64.whl && \
     pip install torch_spline_conv-1.2.1-cp38-cp38-linux_x86_64.whl && \
     rm -rf torch_spline_conv-1.2.1-cp38-cp38-linux_x86_64.whl && \
