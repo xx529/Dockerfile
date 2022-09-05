@@ -1,0 +1,14 @@
+jupyterlab
+lckr-jupyterlab-variableinspector
+theme-darcula
+xeus-python
+jupyter-dash
+jupyterlab-git
+jupyterlab-system-monitor
+jupyterlab-drawio
+jupyterlab-unfold
+jupyterlab-filebrowser-terminal
+jupyter-archive
+jupyterlab-tabular-data-editor
+jupyterlab-stickyland
+jupyterlab-nvdashboard
