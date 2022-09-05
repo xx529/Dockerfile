@@ -22,6 +22,7 @@ ENV LANG zh_CN.UTF-8
 # useful tools
 RUN apt install -y vim && \
     apt install -y git && \
+    apt install -y curl && \
     apt-get install -y build-essential && \
     apt-get install libsasl2-dev && \
     apt -y install python3-pip && \
