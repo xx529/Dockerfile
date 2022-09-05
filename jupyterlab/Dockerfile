@@ -103,9 +103,17 @@ RUN conda create -n py38-dev python=3.8 -y && \
 COPY ./Dockerfile /dockerbuild/
 COPY ./resource /dockerbuild/resource
 
+# code-server https://github.com/coder/code-server/releases
+RUN wget https://download.fastgit.org/coder/code-server/releases/download/v4.6.1/code-server_4.6.1_amd64.deb
+RUN dpkg -i code-server_4.6.1_amd64.deb && \
+    mkdir /root/.config/code-server && \
+    cp -f /dockerbuild/resource/code-server-config.yaml /root/.config/code-server/config.yaml && \
+    rm -rf code-server_4.6.1_amd64.deb
+
 # ports
 EXPOSE 8888
+EXPOSE 8080
 EXPOSE 22
 
-# start ssh and jupyterlab
-CMD /etc/init.d/ssh start && jupyter lab --ip 0.0.0.0 --no-browser --port=8888 --allow-root --NotebookApp.token=hang
+# start ssh, jupyterlab, code-server
+CMD sh /dockerbuild/resource/start.sh
