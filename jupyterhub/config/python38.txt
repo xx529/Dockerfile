@@ -1,0 +1,47 @@
+# Base
+pyyaml
+tqdm
+line_profiler
+memory_profiler
+ray
+pysc2
+cython
+
+
+# ML
+numpy
+pandas
+scikit-learn
+lightgbm
+imblearn
+xgboost
+
+
+# Plot
+matplotlib
+seaborn
+plotly
+
+# torch
+torch
+
+
+# Graph
+networkx
+node2vec
+
+# NLP
+transformers
+gensim
+jieba
+
+
+# RL
+gym
+pygame
+
+
+# Database
+py2neo
+pymysql
+psycopg2-binary

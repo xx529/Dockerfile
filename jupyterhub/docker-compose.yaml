@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+
+  jupyterhub-lab:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: "jupyterhub-lab:1.0"
+    container_name: "jupyterhub-lab"
+    ports:
+      - "8088:8000"
+      - "8022:22"
+    volumes:
+      - "~/your_data:/srv/data/resource"
+    restart: always
