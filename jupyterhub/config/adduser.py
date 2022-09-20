@@ -15,7 +15,7 @@ psw = args.p
 if args.no_create_home:
     os.system(f'useradd --no-log-init --shell /bin/bash {user}')
 else:
-    os.system(f'useradd --create-home --shell /bin/bash {user}')
+    os.system(f'useradd --create-home --no-log-init --shell /bin/bash {user}')
 
 os.system(f'adduser {user} sudo')
 os.system(f'echo "{user}:{psw}" | chpasswd')

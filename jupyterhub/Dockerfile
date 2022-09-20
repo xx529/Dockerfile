@@ -2,7 +2,7 @@ FROM jupyterhub/jupyterhub:2
 
 # system
 RUN apt-get update && \
-    apt install -y sudo vim wget git && \
+    apt install -y sudo vim wget git unzip && \
     apt-get install -y openssh-server openssh-client
 
 # time
