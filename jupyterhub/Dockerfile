@@ -48,7 +48,7 @@ COPY ./config/create_env.sh /create_env.sh
 COPY ./config/start.sh /start.sh
 COPY Dockerfile /dockerbuild/Dockerfile
 
-# Ports
+# ports
 EXPOSE 8000
 EXPOSE 22
 
