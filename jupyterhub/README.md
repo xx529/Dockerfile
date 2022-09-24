@@ -20,16 +20,16 @@ docker-compose up
 
 ## Config
 
-根据以下需要修改docker-compose.yaml文件
+根据以下需要修改`docker-compose.yaml`文件
 
-ports：
-
-1. `8088:8000` 为jupterhub服务端口映射
-2. `8022:22` 为用户远程ssh登陆到容器内端口映射
-
-volumes：
-
-1. `"~/your_data:/srv/data/resource"` 挂载文件到此目录后，该目录下文件以只读形式共享给每个jupterhub用户
+```yaml
+ports: 
+  - "8088:8000"  # jupterhub服务端口映射
+  - "8022:22"    # 用户远程ssh登陆到容器内端口映射
+	
+volumes:
+  - "~/your_data:/srv/data/resource"  # 挂载文件到此目录后，该目录下文件以只读形式共享给每个jupterhub用户
+```
 
 
 
@@ -53,4 +53,24 @@ volumes：
 
 ## Tips
 
-如果使用matplot出现中文字不显示，容器根目录提供了中文字体文件`SimHei.ttf`，根据相关命令配即可
+*  **如果需要复用服务器已存在用户信息，登陆信息和密码信息等，也就是让容器内的用户与服务器一致则需要以下操作，此操作会让共享给每个用户的目录失效**
+
+ 1. `docker-compose.yaml`文件 `volumes`字段增加以下挂载信息
+
+    ```yaml
+    volumes:
+      - "/etc/passwd:/etc/passwd"
+      - "/etc/shadow:/etc/shadow"
+      - "/etc/sudoers:/etc/sudoers"
+      - "/home:/home"  # 用户主目录位置
+    ```
+
+ 2. 在容器中执行命令为每个用户添加目录权限
+
+    ```sh
+    docker exec CONTAINER ID chown -R username /home/username
+    ```
+
+    
+
+* **如果使用matplot出现中文字不显示，容器根目录提供了中文字体文件`SimHei.ttf`，根据相关命令配即可**
