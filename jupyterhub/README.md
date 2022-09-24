@@ -26,7 +26,7 @@ docker-compose up
 ports: 
   - "8088:8000"  # jupterhub服务端口映射
   - "8022:22"    # 用户远程ssh登陆到容器内端口映射
-	
+
 volumes:
   - "~/your_data:/srv/data/resource"  # 挂载文件到此目录后，该目录下文件以只读形式共享给每个jupterhub用户
 ```
