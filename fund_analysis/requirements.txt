@@ -10,3 +10,5 @@ ortools
 webargs
 sqlalchemy-vertica
 scipy
+cython
+fa2
