@@ -11,4 +11,5 @@ webargs
 sqlalchemy-vertica
 scipy
 cython
+igraph
 fa2
