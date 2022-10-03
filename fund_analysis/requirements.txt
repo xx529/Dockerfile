@@ -13,3 +13,5 @@ scipy
 cython
 igraph
 fa2
+scikit-learn
+flask-cors
