@@ -10,9 +10,7 @@ ortools
 webargs
 sqlalchemy-vertica
 scipy
-cython
 igraph
-fa2
 scikit-learn
 flask-cors
 diskcache
