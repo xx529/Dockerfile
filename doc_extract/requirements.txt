@@ -1,0 +1,9 @@
+pandas
+numpy
+aspose-words
+psycopg2-binary
+lac
+requests
+python-docx-1
+flask
+SQLAlchemy
