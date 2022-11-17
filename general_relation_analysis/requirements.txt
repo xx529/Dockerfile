@@ -1,0 +1,11 @@
+flask
+requests
+numpy
+pandas
+networkx
+vertica_python
+webargs
+sqlalchemy-vertica
+flask-cors
+diskcache
+unittestreport
