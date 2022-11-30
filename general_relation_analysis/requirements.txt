@@ -9,3 +9,5 @@ sqlalchemy-vertica
 flask-cors
 diskcache
 unittestreport
+rarfile
+py7zr

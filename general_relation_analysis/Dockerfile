@@ -6,7 +6,7 @@ MAINTAINER Hang
 RUN apt update -y && \
     apt-get update -y &&  \
     apt -y upgrade &&  \
-    apt install -y vim
+    apt install -y vim wget make
 
 # 安装ssh
 RUN apt-get install -y openssh-server openssh-client && \
@@ -17,6 +17,13 @@ RUN apt-get install -y openssh-server openssh-client && \
 RUN apt-get install -y tzdata && \
     ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata
+
+# 安装解压 rar 工具
+RUN wget https://www.rarlab.com/rar/rarlinux-x64-612.tar.gz
+RUN tar -zxvf rarlinux-x64-612.tar.gz
+RUN make -C ./rar & make -C ./rar install
+RUN rm -rf rarlinux-x64-612.tar.gz && \
+    rm -rf rar/
 
 # 安装 python 包
 COPY ./requirements.txt /dockerbuild/requirements.txt
