@@ -6,7 +6,7 @@ MAINTAINER Hang
 RUN apt update -y && \
     apt-get update -y &&  \
     apt -y upgrade &&  \
-    apt install -y vim wget make
+    apt install -y vim wget make libpq-dev gcc
 
 # 安装ssh
 RUN apt-get install -y openssh-server openssh-client && \

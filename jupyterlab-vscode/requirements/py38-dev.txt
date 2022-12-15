@@ -119,7 +119,7 @@ py2neo
 vertica_python
 pyspark
 pymysql
-psycopg2-binary
+psycopg2
 pyhive[hive]
 pyhive[presto]
 elasticsearch
@@ -127,3 +127,4 @@ redis
 happybase
 pymongo
 sqlalchemy-vertica
+opengauss-sqlalchemy

@@ -30,7 +30,8 @@ RUN apt install -y vim && \
     apt-get install -y unzip && \
     apt-get install -y libfreetype6-dev && \
     apt-get install -y pkg-config && \
-    apt-get install -y libpng-dev
+    apt-get install -y libpng-dev && \
+    apt-get install -y libpq-dev
 
 # ssh user
 RUN apt-get install -y openssh-server openssh-client && \

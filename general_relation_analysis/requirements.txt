@@ -3,11 +3,13 @@ requests
 numpy
 pandas
 networkx
-vertica_python
 webargs
-sqlalchemy-vertica
+opengauss-sqlalchemy
+psycopg2
 flask-cors
 diskcache
 unittestreport
 rarfile
 py7zr
+openpyxl
+nose2
