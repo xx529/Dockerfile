@@ -13,3 +13,7 @@ rarfile
 py7zr
 openpyxl
 nose2
+coverage
+flask_apscheduler
+xlrd
+chardet
