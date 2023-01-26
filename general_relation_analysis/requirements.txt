@@ -17,3 +17,4 @@ coverage
 flask_apscheduler
 xlrd
 chardet
+DBUtils
