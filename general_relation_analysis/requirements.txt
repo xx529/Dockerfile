@@ -17,5 +17,3 @@ coverage
 flask_apscheduler
 xlrd
 chardet
-DBUtils
-requests_toolbelt

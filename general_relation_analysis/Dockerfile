@@ -28,7 +28,8 @@ RUN rm -rf rarlinux-x64-612.tar.gz && \
 # 安装 python 包
 COPY ./requirements.txt /dockerbuild/requirements.txt
 RUN python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade pip && \
-    pip install --no-cache-dir  -i https://pypi.tuna.tsinghua.edu.cn/simple -r /dockerbuild/requirements.txt
+    pip install --no-cache-dir  -i https://pypi.tuna.tsinghua.edu.cn/simple -r /dockerbuild/requirements.txt && \
+    rm -rf ~/.cache/pip
 
 COPY ./Dockerfile /dockerbuild/Dockerfile
 

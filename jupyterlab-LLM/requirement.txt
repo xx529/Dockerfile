@@ -1,0 +1,6 @@
+ipykernel
+torch
+torchvisions
+pandas
+numpy
+flask
