@@ -45,17 +45,17 @@ RUN conda update -n base -c defaults conda
 
 # jupyterlab + extension
 COPY ./jupyterlab.txt /dockerbuild/jupyterlab.txt
-COPY ./requirement.txt /dockerbuild/requirement.txt
 RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
     pip install --no-cache-dir -r /dockerbuild/jupyterlab.txt && \
     pip install 'jupyterlab>=3.0.0,<4.0.0a0' jupyterlab-lsp && \
-    pip install 'python-lsp-server[all]' && \
-    # python env
-    conda create -n py38-llm python=3.8 -y && \
+    pip install 'python-lsp-server[all]'
+
+# python env
+COPY ./requirements.txt /dockerbuild/requirements.txt
+RUN conda create -n py38-llm python=3.8 -y && \
     source activate py38-llm && \
     pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
-    pip install --no-cache-dir  && \
-    pip install --use-deprecated=legacy-resolver --no-cache-dir -r /dockerbuild/requirement.txt && \
+    pip install --use-deprecated=legacy-resolver --no-cache-dir -r /dockerbuild/requirements.txt && \
     python -m ipykernel install --user --name=py38-llm --display-name "py38-llm"
 
 # ports

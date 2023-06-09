@@ -1,0 +1,8 @@
+ipykernel
+chromadb
+transformers
+cpm_kernels
+sentencepiece
+pandas
+numpy
+flask
