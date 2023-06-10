@@ -13,6 +13,7 @@ RUN apt update -y && \
     apt install -y vim && \
     apt install -y git && \
     apt-get install -y unzip && \
+    apt-get install -y build-essential && \
     # time
     apt-get install -y tzdata && \
     ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
@@ -27,6 +28,13 @@ RUN apt update -y && \
 
 ENV LC_CTYPE zh_CN.UTF-8
 ENV LANG zh_CN.UTF-8
+
+# cuda
+RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-keyring_1.0-1_all.deb && \
+    dpkg -i cuda-keyring_1.0-1_all.deb && \
+    apt-get update && \
+    apt-get -y install cuda && \
+    rm -rf cuda-keyring_1.0-1_all.deb
 
 # Miniconda
 ENV PATH /opt/conda/bin:$PATH
