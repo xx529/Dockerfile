@@ -29,13 +29,6 @@ RUN apt update -y && \
 ENV LC_CTYPE zh_CN.UTF-8
 ENV LANG zh_CN.UTF-8
 
-# cuda
-RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-keyring_1.0-1_all.deb && \
-    dpkg -i cuda-keyring_1.0-1_all.deb && \
-    apt-get update && \
-    apt-get -y install cuda && \
-    rm -rf cuda-keyring_1.0-1_all.deb
-
 # Miniconda
 ENV PATH /opt/conda/bin:$PATH
 RUN wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
@@ -65,6 +58,8 @@ RUN conda create -n py38-llm python=3.8 -y && \
     pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
     pip install --use-deprecated=legacy-resolver --no-cache-dir -r /dockerbuild/requirements.txt && \
     python -m ipykernel install --user --name=py38-llm --display-name "py38-llm"
+
+COPY ./Dockerfile /dockerfile/Dockerfile
 
 # ports
 EXPOSE 8888
