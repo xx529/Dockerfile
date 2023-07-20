@@ -4,7 +4,6 @@ pyyaml
 numpy
 pandas
 networkx
-py2neo
 vertica_python
 ortools
 webargs
@@ -14,4 +13,3 @@ igraph
 scikit-learn
 flask-cors
 diskcache
-tornado
