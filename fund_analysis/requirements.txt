@@ -14,3 +14,4 @@ scikit-learn
 flask-cors
 diskcache
 openpyxl
+retry
