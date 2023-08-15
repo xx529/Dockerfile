@@ -28,4 +28,3 @@ RUN conda update -n base -c defaults conda
 
 RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
 	pip install --use-deprecated=legacy-resolver --no-cache-dir -r ./dockerfile/requirement.txt
-
