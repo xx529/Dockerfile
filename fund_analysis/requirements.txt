@@ -10,7 +10,6 @@ webargs
 sqlalchemy-vertica
 scipy
 igraph
-scikit-learn
 flask-cors
 diskcache
 openpyxl
