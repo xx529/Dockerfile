@@ -15,3 +15,4 @@ diskcache
 openpyxl
 retry
 flask_apscheduler
+python-docx
