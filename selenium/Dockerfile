@@ -18,7 +18,7 @@ RUN apt-get install -y openssh-server openssh-client && \
     echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 
 RUN pip install --no-cache-dir requests -i https://pypi.tuna.tsinghua.edu.cn/simple
-RUN pip install --no-cache-dir selenium pytest pytest-html allure-pytest -i https://pypi.tuna.tsinghua.edu.cn/simple
+RUN pip install --no-cache-dir selenium pytest pytest-html allure-pytest pyautogui -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 COPY ./Dockerfile /dockerbuild/Dockerfile
 COPY ./start.sh /start.sh
