@@ -2,9 +2,6 @@ FROM python:3.10.12-slim-bullseye
 
 MAINTAINER Hang
 
-# 设置 label
-LABEL project="zjfx"
-
 # apt 更新
 RUN apt-get update -y &&  \
     apt -y upgrade && \

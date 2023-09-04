@@ -13,6 +13,7 @@ igraph
 flask-cors
 diskcache
 openpyxl
+xlrd
 retry
 flask_apscheduler
 python-docx
