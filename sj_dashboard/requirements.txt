@@ -1,0 +1,13 @@
+flask
+pyyaml
+numpy
+pandas
+webargs
+flask-cors
+diskcache
+retry
+flask_apscheduler
+loguru
+psycopg2-binary
+xlrd
+openpyxl
