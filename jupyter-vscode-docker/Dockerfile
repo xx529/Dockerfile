@@ -83,6 +83,12 @@ RUN dpkg -i code-server_4.16.1_amd64.deb && \
     cp -f /dockerbuild/resource/code-server-config.yaml /root/.config/code-server/config.yaml && \
     rm -rf code-server_4.16.1_amd64.deb
 
+# jupyterlab
+EXPOSE 8888
+# code-server
+EXPOSE 8080
+# ssh
+EXPOSE 22
 
 # start ssh, jupyterlab, code-server
 CMD sh /dockerbuild/resource/start.sh
