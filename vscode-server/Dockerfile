@@ -68,16 +68,6 @@ RUN conda create -n py310 python=3.10 -y && \
     pip install ipykernel && \
     python -m ipykernel install --user --name=py310 --display-name "py310"
 
-# 下载并安装 Go 编译器
-RUN wget https://golang.org/dl/go1.21.1.linux-amd64.tar.gz && \
-    tar -C /usr/local -xzf go1.21.1.linux-amd64.tar.gz && \
-    rm go1.21.1.linux-amd64.tar.gz
-
-# 配置 Go 环境变量
-ENV PATH="/usr/local/go/bin:${PATH}"
-ENV GOPATH="/go"
-ENV GOBIN="/go/bin"
-
 # save resource
 COPY ./Dockerfile /dockerbuild/
 COPY ./resource /dockerbuild/resource
