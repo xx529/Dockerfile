@@ -1,0 +1,60 @@
+# Base
+pyyaml
+tqdm
+cython
+xlrd
+xlwt
+openpyxl
+einops
+line_profiler
+memory_profiler
+loguru
+docker
+
+# other
+imageio
+faker
+python-docx
+aspose-words
+pdfplumber
+
+
+# ML
+numpy
+pandas
+scikit-learn
+lightgbm
+ortools
+efficient-apriori
+
+# Plot
+matplotlib
+pyecharts
+plotly
+
+# Graph
+networkx
+node2vec
+python-igraph
+
+# NLP
+gensim
+jieba
+lac
+
+# Web
+flask
+webargs
+scrapy
+
+# Database
+py2neo
+vertica_python
+pymysql
+psycopg2-binary
+elasticsearch
+redis
+pymongo
+sqlalchemy-vertica
+opengauss-sqlalchemy
+clickhouse-driver
