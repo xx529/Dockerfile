@@ -1,0 +1,11 @@
+pandas
+numpy
+flask
+sqlalchemy==1.4.43
+flask-cors
+networkx
+webargs
+diskcache
+flask_apscheduler
+loguru
+psycopg2-binary
