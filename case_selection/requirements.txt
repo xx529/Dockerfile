@@ -9,3 +9,5 @@ diskcache
 flask_apscheduler
 loguru
 psycopg2-binary
+retry
+pyyaml
