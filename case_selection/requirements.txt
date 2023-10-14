@@ -11,4 +11,3 @@ loguru
 psycopg2-binary
 retry
 pyyaml
-sqlparse
