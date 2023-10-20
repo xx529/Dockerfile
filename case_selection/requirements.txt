@@ -11,3 +11,4 @@ loguru
 psycopg2-binary
 retry
 pyyaml
+python-dotenv
